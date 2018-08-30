@@ -1,0 +1,8 @@
+color schemes
+
+light green #D4E09B
+light blue #97ABB1
+Grey #746F72
+Red #732C2C
+Black #1E1E24
+pastel Orange #FCAA67

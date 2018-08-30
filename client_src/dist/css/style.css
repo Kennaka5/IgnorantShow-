@@ -1,0 +1,43 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 10px 15px 10px 10px;
+  background: #1e1e24;
+}
+li.navTitle {
+  float: left;
+  color: #FCAA67;
+}
+li.links {
+  float: right;
+  color: #97ABB1;
+}
+h1 {
+  color: Black;
+  margin: 4% 0% 0% 40%;
+  padding: 0% 0% 0% 0%;
+  font-size: 15px;
+}
+hr {
+  color: Black;
+  height: 3px;
+  background: #732c2c;
+}
+.articalList {
+  text-align: center;
+  margin: 4% 0%;
+}
+.artical {
+  text-align: center;
+}
+.pOne {
+  width: 100%;
+  height: 100%;
+}
+.articalTitle {
+  color: white;
+  background: #1e1e24;
+  padding: 7px 8px;
+  margin: -4px 0px;
+}
