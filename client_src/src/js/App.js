@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 
 import Home from './containers/home';
+import Article from './containers/article';
 import '../css/style.less';
 
 
@@ -15,6 +16,7 @@ export default class App extends Component {
         <Switch>
       <div className='container'>
       <Route exact path='/' component={ Home } />
+      <Route path='/article/:id' component= {Article} />
       </div>
        </Switch>
       </Router>

@@ -1,8 +1,8 @@
 import { types } from './homeActions'
 
 const defaultState = {
-results: [],
-inputTitle: ''
+articleList: null,
+waiting: false
   };
 
   export default function homeReducer (state = defaultState, action) {
@@ -11,7 +11,19 @@ inputTitle: ''
     // for defining a default value on a parameter
       switch (type) {
       
-      case types.MOVIE_INPUT: 
+        case 'DISPLAY_ARTICLE_LIST_PENDING': {
+          return {
+            ...state,
+            waiting: true
+          }
+        }
+
+        case 'DISPLAY_ARTICLE_LIST_FULFILLED': {
+          return {
+            ...state,
+            articleList: payload
+          };
+        }
 
   default: {
     return state;

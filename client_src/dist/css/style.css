@@ -1,3 +1,10 @@
+/********************************
+HomePage Mobile
+********************************/
+body {
+  display: flex;
+  justify-content: center;
+}
 ul {
   list-style-type: none;
   margin: 0;
@@ -24,20 +31,114 @@ hr {
   height: 3px;
   background: #732c2c;
 }
-.articalList {
-  text-align: center;
+.articleList {
+  display: flex;
+  flex-direction: column;
   margin: 4% 0%;
 }
-.artical {
-  text-align: center;
+.article {
+  display: flex;
+  flex-direction: column;
+  margin: 5% 1%;
 }
-.pOne {
+.articleImg {
   width: 100%;
   height: 100%;
 }
-.articalTitle {
-  color: white;
+.articleInfo {
+  display: flex;
+  flex-direction: column;
   background: #1e1e24;
+}
+.articleTitle {
+  color: white;
   padding: 7px 8px;
   margin: -4px 0px;
+}
+.articleBody {
+  display: none;
+}
+/******************************************
+Media queries // Home Page
+*******************************************/
+@media screen and (min-width: 667px) {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 10px 15px 10px 10px;
+    background: #1e1e24;
+  }
+  li.navTitle {
+    float: left;
+    color: #FCAA67;
+  }
+  li.links {
+    float: right;
+    color: #97ABB1;
+  }
+  h1 {
+    color: Black;
+    margin: 4% 0% 0% 40%;
+    padding: 0% 0% 0% 0%;
+    font-size: 15px;
+  }
+  hr {
+    color: Black;
+    height: 3px;
+    background: #732c2c;
+  }
+  .articleList {
+    display: flex;
+    flex-direction: column;
+    margin: 4% 0%;
+  }
+  .article {
+    display: flex;
+    flex-direction: row;
+    margin: 1% 1%;
+  }
+  .articleImg {
+    width: 45%;
+    height: 100%;
+  }
+  .articleInfo {
+    display: flex;
+    flex-direction: column;
+    background: #1e1e24;
+    width: 55%;
+    padding: 0% 2%;
+  }
+  .articleTitle {
+    color: white;
+    padding: 0% 0% 10%;
+    margin: 2% 0% 3%;
+    height: 1%;
+  }
+  .articleBody {
+    display: flex;
+    color: darkgrey;
+  }
+}
+/***************************
+Article Page
+****************************/
+.articleBody {
+  display: flex;
+  flex-direction: column;
+}
+.choosenArticle {
+  display: flex;
+  flex-direction: column;
+}
+.choosenTitle {
+  display: flex;
+}
+.choosenImg {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.choosenBody {
+  display: flex;
 }

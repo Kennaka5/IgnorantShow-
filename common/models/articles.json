@@ -6,16 +6,25 @@
     "validateUpsert": true
   },
   "properties": {
+    "media": {
+      "type": "string",
+      "required": false
+    },
     "title": {
       "type": "string",
       "required": true
     },
     "date": {
-      "type": "string"
+      "type": "date",
+      "required": true
     },
-    "body": {
+    "headline": {
       "type": "string",
       "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": false
     },
     "publish": {
       "type": "boolean",
@@ -23,7 +32,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "comments": {
+      "type": "hasMany",
+      "model": "comments",
+      "foreignKey": ""
+    },
+    "topics": {
+      "type": "hasMany",
+      "model": "topic",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

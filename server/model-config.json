@@ -46,5 +46,9 @@
   "comments": {
     "dataSource": "db",
     "public": true
+  },
+  "topic": {
+    "dataSource": "db",
+    "public": true
   }
 }
