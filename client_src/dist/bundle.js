@@ -11153,44 +11153,67 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         )
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'h1',
-        null,
-        'The feed'
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'articleList' },
-        !!articleList ? articleList.map(s => {
-          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'article', key: s.id },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-              { to: `/article/${s.id}` },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'articleImg',
-                src: s.media, alt: 'whatever'
-              })
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'articleInfo' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'h2',
-                { className: 'articleTitle' },
-                s.title
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'p',
-                { className: 'articleBody' },
-                s.body
-              )
-            )
-          );
-        }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        { className: 'homepageLayout' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'loading' },
-          'Loading...'
+          { className: 'articleList' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'feedName' },
+            'The feed'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
+          !!articleList ? articleList.map(s => {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'article', key: s.id },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                { to: `/article/${s.id}`, className: 'link' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'articleImg',
+                  src: s.media, alt: 'whatever'
+                }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { className: 'articleInfo' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'h2',
+                    { className: 'articleTitle' },
+                    s.title
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'p',
+                    { className: 'articleHeadline' },
+                    s.headline
+                  )
+                )
+              )
+            );
+          }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'loading' },
+            'Loading...'
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'about' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aboutBody' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'p',
+              { className: 'aboutTitle' },
+              'About Me'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', { className: 'aboutHr' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'p',
+              { className: 'aboutMe' },
+              'This is currently a developing site with the intent to give readers another angle to look at the entertainment industry.  So much goes into what we see in the media that affects the the end product viewers like us get to see.'
+            )
+          )
         )
       )
     );
@@ -12174,25 +12197,30 @@ class Article extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             !!choosenArticle && choosenArticle.headline
           )
         ),
-        !!choosenTopics ? choosenTopics.map(s => {
-          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'topicInfo' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'h2',
-              { className: 'topicTitle' },
-              s.title
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'p',
-              { className: 'topicBody' },
-              s.body
-            )
-          );
-        }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'loading' },
-          'Loading...'
+          { className: 'infoBody' },
+          !!choosenTopics ? choosenTopics.map(s => {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'topicInfo' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'h2',
+                { className: 'topicTitle' },
+                s.title
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', { className: 'topicSelector' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'p',
+                { className: 'topicBody' },
+                s.body
+              )
+            );
+          }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'loading' },
+            'Loading...'
+          )
         )
       )
     );
@@ -12241,7 +12269,7 @@ exports = module.exports = __webpack_require__(143)(false);
 
 
 // module
-exports.push([module.i, "/********************************\nHomePage Mobile\n********************************/\nbody {\n  display: flex;\n  justify-content: center;\n}\nul {\n  list-style-type: none;\n  margin: 0;\n  overflow: hidden;\n  padding: 10px 15px 10px 10px;\n  background: #1e1e24;\n}\nli.navTitle {\n  float: left;\n  color: #FCAA67;\n}\nli.links {\n  float: right;\n  color: #97ABB1;\n}\nh1 {\n  color: Black;\n  margin: 4% 0% 0% 40%;\n  padding: 0% 0% 0% 0%;\n  font-size: 15px;\n}\nhr {\n  color: Black;\n  height: 3px;\n  background: #732c2c;\n}\n.articleList {\n  display: flex;\n  flex-direction: column;\n  margin: 4% 0%;\n}\n.article {\n  display: flex;\n  flex-direction: column;\n  margin: 5% 1%;\n}\n.articleImg {\n  width: 100%;\n  height: 100%;\n}\n.articleInfo {\n  display: flex;\n  flex-direction: column;\n  background: #1e1e24;\n}\n.articleTitle {\n  color: white;\n  padding: 7px 8px;\n  margin: -4px 0px;\n}\n.articleBody {\n  display: none;\n}\n/******************************************\nMedia queries // Home Page\n*******************************************/\n@media screen and (min-width: 667px) {\n  ul {\n    list-style-type: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 10px 15px 10px 10px;\n    background: #1e1e24;\n  }\n  li.navTitle {\n    float: left;\n    color: #FCAA67;\n  }\n  li.links {\n    float: right;\n    color: #97ABB1;\n  }\n  h1 {\n    color: Black;\n    margin: 4% 0% 0% 40%;\n    padding: 0% 0% 0% 0%;\n    font-size: 15px;\n  }\n  hr {\n    color: Black;\n    height: 3px;\n    background: #732c2c;\n  }\n  .articleList {\n    display: flex;\n    flex-direction: column;\n    margin: 4% 0%;\n  }\n  .article {\n    display: flex;\n    flex-direction: row;\n    margin: 1% 1%;\n  }\n  .articleImg {\n    width: 45%;\n    height: 100%;\n  }\n  .articleInfo {\n    display: flex;\n    flex-direction: column;\n    background: #1e1e24;\n    width: 55%;\n    padding: 0% 2%;\n  }\n  .articleTitle {\n    color: white;\n    padding: 0% 0% 10%;\n    margin: 2% 0% 3%;\n    height: 1%;\n  }\n  .articleBody {\n    display: flex;\n    color: darkgrey;\n  }\n}\n/***************************\nArticle Page\n****************************/\n.articleBody {\n  display: flex;\n  flex-direction: column;\n}\n.choosenArticle {\n  display: flex;\n  flex-direction: column;\n}\n.choosenTitle {\n  display: flex;\n}\n.choosenImg {\n  display: flex;\n  width: 100%;\n  justify-content: center;\n}\n.choosenBody {\n  display: flex;\n}\n", ""]);
+exports.push([module.i, "/********************************\nHomePage Mobile\n********************************/\n#root {\n  background-color: #F2F4F3;\n  padding: 2%;\n}\nbody {\n  display: flex;\n  justify-content: center;\n}\nul {\n  list-style-type: none;\n  margin: 0;\n  overflow: hidden;\n  padding: 10px 15px 10px 10px;\n  background: #0A0908;\n}\nli.navTitle {\n  float: left;\n  color: #E5F2C9;\n}\nli.links {\n  float: right;\n  color: #E5F2C9;\n  text-decoration: none;\n}\n.feedName {\n  color: #0A0908;\n  margin: 4% 0% 0% 40%;\n  padding: 0% 0% 0% 0%;\n  font-size: 15px;\n}\nhr {\n  color: #0A0908;\n  height: 3px;\n  background: #0A0908;\n  width: 90%;\n}\n.homepageLayout {\n  display: flex;\n}\n.about {\n  display: none;\n}\n.articleList {\n  display: flex;\n  flex-direction: column;\n  margin: 4% 0%;\n}\n.article {\n  display: flex;\n  flex-direction: column;\n  margin: 5% 1%;\n  background: #0A0908;\n}\n.articleImg {\n  width: 100%;\n  height: 100%;\n}\n.articleInfo {\n  display: flex;\n  flex-direction: column;\n  background: #A9CEF4;\n}\n.articleTitle {\n  color: #0A0908;\n  padding: 7px 8px;\n  margin: -4px 0px;\n}\n.articleHeadline {\n  display: none;\n  color: #22333B;\n}\n/***************************\nArticle Page\n****************************/\n.articleBody {\n  display: flex;\n  flex-direction: column;\n}\n.choosenArticle {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.choosenTitle {\n  display: flex;\n}\n.choosenImg {\n  display: flex;\n  width: 100%;\n  justify-content: center;\n}\n.choosenBody {\n  display: flex;\n}\n.topicInfo {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n}\n.topicTitle {\n  display: flex;\n  text-align: center;\n  justify-content: center;\n}\n.topicSelector {\n  border: 0;\n  clear: both;\n  display: block;\n  width: 96%;\n  background-color: black;\n  height: 1px;\n  margin: 0px 0px 0px 0px;\n}\n.topicBody {\n  display: flex;\n  color: #22333B;\n}\n/******************************************\nMedia queries\n*******************************************/\n@media screen and (min-width: 667px) {\n  ul {\n    list-style-type: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 10px 15px 10px 10px;\n    background: #1e1e24;\n  }\n  li.navTitle {\n    float: left;\n    color: #FCAA67;\n  }\n  li.links {\n    float: right;\n    color: #97ABB1;\n  }\n  .feedName {\n    color: Black;\n    margin: 4% 0% 0% 40%;\n    padding: 0% 0% 0% 0%;\n    font-size: 30px;\n  }\n  hr {\n    color: Black;\n    height: 3px;\n    background: #732c2c;\n  }\n  .articleList {\n    display: flex;\n    margin: 4% 0%;\n  }\n  .article {\n    display: flex;\n    margin: 1% 1%;\n  }\n  .articleImg {\n    width: 45%;\n    height: 100%;\n  }\n  .articleInfo {\n    display: flex;\n    background: #A9CEF4;\n    width: 55%;\n    padding: 0% 2%;\n  }\n  .articleTitle {\n    color: #22333B;\n    padding: 0% 0% 10%;\n    margin: 0% 0% 2%;\n    height: 1%;\n  }\n  .articleHeadline {\n    display: flex;\n    color: #22333B;\n  }\n  .link {\n    display: flex;\n    flex-direction: row;\n  }\n  .articleBody {\n    display: flex;\n    flex-direction: column;\n  }\n  .choosenArticle {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n  }\n  .choosenTitle {\n    display: flex;\n  }\n  .choosenImg {\n    display: flex;\n    width: 100%;\n    justify-content: center;\n  }\n  .choosenBody {\n    display: flex;\n    font-size: 20px;\n  }\n  .topicInfo {\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n  }\n  .topicTitle {\n    display: flex;\n  }\n  .topicSelector {\n    border: 0;\n    clear: both;\n    display: block;\n    width: 96%;\n    background-color: black;\n    height: 1px;\n    margin: 0px 0px 0px 0px;\n  }\n  .topicBody {\n    display: flex;\n    font-size: 19px;\n  }\n}\n@media screen and (min-width: 768px) {\n  ul {\n    list-style-type: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 10px 15px 10px 10px;\n    background: #1e1e24;\n  }\n  li.navTitle {\n    float: left;\n    color: #FCAA67;\n    font-size: 30px;\n  }\n  li.links {\n    float: right;\n    color: #97ABB1;\n    font-size: 30px;\n  }\n  .feedName {\n    color: Black;\n    margin: 0% 0% 0% 40%;\n    padding: 0% 0% 0% 0%;\n    font-size: 40px;\n  }\n  hr {\n    color: Black;\n    height: 3px;\n    background: #732c2c;\n    width: 97%;\n  }\n  .about {\n    display: flex;\n    justify-content: flex-start;\n    align-content: center;\n    margin: 3% 0% 0% 0%;\n    flex-direction: column;\n    width: 28%;\n  }\n  .aboutBody {\n    display: flex;\n    flex-direction: column;\n  }\n  .aboutTitle {\n    font-size: 20px;\n    margin: 11% 0% 0% 0%;\n    display: flex;\n    justify-content: center;\n    color: #22333B;\n    font-style: bold;\n  }\n  .aboutHr {\n    display: flex;\n  }\n  .aboutMe {\n    display: flex;\n    margin: 3% 0% 0% 0%;\n    justify-content: center;\n    align-content: center;\n    color: #0A0908;\n    font-size: 20px;\n  }\n  .articleList {\n    display: flex;\n    margin: 4% 0%;\n    width: 72%;\n  }\n  .article {\n    display: flex;\n    margin: 1% 1%;\n  }\n  .articleImg {\n    width: 45%;\n    height: 100%;\n  }\n  .articleInfo {\n    display: flex;\n    background: #A9CEF4;\n    width: 55%;\n    padding: 0% 2%;\n  }\n  .articleTitle {\n    color: #22333B;\n    padding: 0% 0% 10%;\n    margin: 3% 0% 2%;\n    height: 1%;\n    font-size: 20px;\n  }\n  .articleHeadline {\n    display: flex;\n    color: #22333B;\n    font-size: 15px;\n  }\n  .link {\n    display: flex;\n    flex-direction: row;\n  }\n  .articleBody {\n    display: flex;\n    flex-direction: column;\n  }\n  .choosenArticle {\n    display: flex;\n    flex-direction: column;\n  }\n  .choosenTitle {\n    display: flex;\n    font-size: 45px;\n  }\n  .choosenImg {\n    display: flex;\n    width: 100%;\n    justify-content: center;\n  }\n  .choosenBody {\n    display: flex;\n    font-size: 31px;\n  }\n  .topicInfo {\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n  }\n  .topicTitle {\n    display: flex;\n    font-size: 38px;\n  }\n  .topicSelector {\n    border: 0;\n    clear: both;\n    display: block;\n    width: 96%;\n    background-color: black;\n    height: 1px;\n    margin: 0px 0px 0px 0px;\n  }\n  .topicBody {\n    display: flex;\n    font-size: 30px;\n  }\n}\n@media screen and (min-width: 1240px) {\n  ul {\n    list-style-type: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 10px 15px 10px 10px;\n    background: #1e1e24;\n  }\n  li.navTitle {\n    float: left;\n    color: #FCAA67;\n    font-size: 55px;\n  }\n  li.links {\n    float: right;\n    color: #97ABB1;\n    font-size: 55px;\n  }\n  .feedName {\n    color: Black;\n    margin: 0% 0% 0% 40%;\n    padding: 0% 0% 0% 0%;\n    font-size: 15px;\n  }\n  hr {\n    color: Black;\n    height: 3px;\n    background: #732c2c;\n  }\n  .about {\n    display: flex;\n  }\n  .aboutTitle {\n    font-size: 20px;\n    margin: 2% 0% 0% 0%;\n    display: flex;\n    justify-content: center;\n    color: #22333B;\n    font-style: bold;\n  }\n  .aboutMe {\n    display: flex;\n  }\n  .articleList {\n    display: flex;\n    margin: 4% 0%;\n  }\n  .article {\n    display: flex;\n    margin: 1% 1%;\n  }\n  .articleImg {\n    width: 45%;\n    height: 100%;\n  }\n  .articleInfo {\n    display: flex;\n    background: #A9CEF4;\n    width: 55%;\n    padding: 0% 2%;\n  }\n  .articleTitle {\n    color: #22333B;\n    padding: 0% 0% 10%;\n    margin: 3% 0% 2%;\n    height: 1%;\n    font-size: 30px;\n  }\n  .articleHeadline {\n    display: flex;\n    color: #22333B;\n    font-size: 30px;\n  }\n  .link {\n    display: flex;\n    flex-direction: row;\n  }\n  .articleBody {\n    display: flex;\n    flex-direction: column;\n  }\n  .choosenArticle {\n    display: flex;\n    flex-direction: column;\n  }\n  .choosenTitle {\n    display: flex;\n    font-size: 45px;\n  }\n  .choosenImg {\n    display: flex;\n    width: 90%;\n    justify-content: center;\n  }\n  .choosenBody {\n    display: flex;\n    font-size: 31px;\n  }\n  .infoBody {\n    display: flex;\n    flex-direction: column;\n  }\n  .topicInfo {\n    display: flex;\n  }\n  .topicTitle {\n    display: flex;\n    font-size: 38px;\n  }\n  .topicSelector {\n    border: 0;\n    clear: both;\n    display: block;\n    width: 96%;\n    background-color: black;\n    height: 1px;\n    margin: 0px 0px 0px 0px;\n  }\n  .topicBody {\n    display: flex;\n    font-size: 30px;\n  }\n}\n", ""]);
 
 // exports
 

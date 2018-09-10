@@ -37,15 +37,18 @@ componentWillMount() {
                   <div className='choosenInfo'>
                     <p className='choosenBody'>{!!choosenArticle && choosenArticle.headline}</p>
                   </div>
+                  <div className='infoBody'>
                   {!!choosenTopics ? choosenTopics.map(s =>{
             return (
                   <div className='topicInfo'>
                     <h2 className='topicTitle'>{s.title}</h2>
+                    <hr className='topicSelector'/>
                     <p className='topicBody'>{s.body}</p>
                   </div>);
           })
           : <div className="loading">Loading...</div>}
               </div>
+            </div>
       </div>
     )    
   }

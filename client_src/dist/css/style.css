@@ -1,6 +1,10 @@
 /********************************
 HomePage Mobile
 ********************************/
+#root {
+  background-color: #F2F4F3;
+  padding: 2%;
+}
 body {
   display: flex;
   justify-content: center;
@@ -10,26 +14,34 @@ ul {
   margin: 0;
   overflow: hidden;
   padding: 10px 15px 10px 10px;
-  background: #1e1e24;
+  background: #0A0908;
 }
 li.navTitle {
   float: left;
-  color: #FCAA67;
+  color: #E5F2C9;
 }
 li.links {
   float: right;
-  color: #97ABB1;
+  color: #E5F2C9;
+  text-decoration: none;
 }
-h1 {
-  color: Black;
+.feedName {
+  color: #0A0908;
   margin: 4% 0% 0% 40%;
   padding: 0% 0% 0% 0%;
   font-size: 15px;
 }
 hr {
-  color: Black;
+  color: #0A0908;
   height: 3px;
-  background: #732c2c;
+  background: #0A0908;
+  width: 90%;
+}
+.homepageLayout {
+  display: flex;
+}
+.about {
+  display: none;
 }
 .articleList {
   display: flex;
@@ -40,6 +52,7 @@ hr {
   display: flex;
   flex-direction: column;
   margin: 5% 1%;
+  background: #0A0908;
 }
 .articleImg {
   width: 100%;
@@ -48,18 +61,65 @@ hr {
 .articleInfo {
   display: flex;
   flex-direction: column;
-  background: #1e1e24;
+  background: #A9CEF4;
 }
 .articleTitle {
-  color: white;
+  color: #0A0908;
   padding: 7px 8px;
   margin: -4px 0px;
 }
-.articleBody {
+.articleHeadline {
   display: none;
+  color: #22333B;
+}
+/***************************
+Article Page
+****************************/
+.articleBody {
+  display: flex;
+  flex-direction: column;
+}
+.choosenArticle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.choosenTitle {
+  display: flex;
+}
+.choosenImg {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.choosenBody {
+  display: flex;
+}
+.topicInfo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.topicTitle {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.topicSelector {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 96%;
+  background-color: black;
+  height: 1px;
+  margin: 0px 0px 0px 0px;
+}
+.topicBody {
+  display: flex;
+  color: #22333B;
 }
 /******************************************
-Media queries // Home Page
+Media queries
 *******************************************/
 @media screen and (min-width: 667px) {
   ul {
@@ -77,11 +137,11 @@ Media queries // Home Page
     float: right;
     color: #97ABB1;
   }
-  h1 {
+  .feedName {
     color: Black;
     margin: 4% 0% 0% 40%;
     padding: 0% 0% 0% 0%;
-    font-size: 15px;
+    font-size: 30px;
   }
   hr {
     color: Black;
@@ -90,12 +150,10 @@ Media queries // Home Page
   }
   .articleList {
     display: flex;
-    flex-direction: column;
     margin: 4% 0%;
   }
   .article {
     display: flex;
-    flex-direction: row;
     margin: 1% 1%;
   }
   .articleImg {
@@ -104,41 +162,327 @@ Media queries // Home Page
   }
   .articleInfo {
     display: flex;
-    flex-direction: column;
-    background: #1e1e24;
+    background: #A9CEF4;
     width: 55%;
     padding: 0% 2%;
   }
   .articleTitle {
-    color: white;
+    color: #22333B;
     padding: 0% 0% 10%;
-    margin: 2% 0% 3%;
+    margin: 0% 0% 2%;
     height: 1%;
+  }
+  .articleHeadline {
+    display: flex;
+    color: #22333B;
+  }
+  .link {
+    display: flex;
+    flex-direction: row;
   }
   .articleBody {
     display: flex;
-    color: darkgrey;
+    flex-direction: column;
+  }
+  .choosenArticle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .choosenTitle {
+    display: flex;
+  }
+  .choosenImg {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .choosenBody {
+    display: flex;
+    font-size: 20px;
+  }
+  .topicInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .topicTitle {
+    display: flex;
+  }
+  .topicSelector {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 96%;
+    background-color: black;
+    height: 1px;
+    margin: 0px 0px 0px 0px;
+  }
+  .topicBody {
+    display: flex;
+    font-size: 19px;
   }
 }
-/***************************
-Article Page
-****************************/
-.articleBody {
-  display: flex;
-  flex-direction: column;
+@media screen and (min-width: 768px) {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 10px 15px 10px 10px;
+    background: #1e1e24;
+  }
+  li.navTitle {
+    float: left;
+    color: #FCAA67;
+    font-size: 30px;
+  }
+  li.links {
+    float: right;
+    color: #97ABB1;
+    font-size: 30px;
+  }
+  .feedName {
+    color: Black;
+    margin: 0% 0% 0% 40%;
+    padding: 0% 0% 0% 0%;
+    font-size: 40px;
+  }
+  hr {
+    color: Black;
+    height: 3px;
+    background: #732c2c;
+    width: 97%;
+  }
+  .about {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    margin: 3% 0% 0% 0%;
+    flex-direction: column;
+    width: 28%;
+  }
+  .aboutBody {
+    display: flex;
+    flex-direction: column;
+  }
+  .aboutTitle {
+    font-size: 20px;
+    margin: 11% 0% 0% 0%;
+    display: flex;
+    justify-content: center;
+    color: #22333B;
+    font-style: bold;
+  }
+  .aboutHr {
+    display: flex;
+  }
+  .aboutMe {
+    display: flex;
+    margin: 3% 0% 0% 0%;
+    justify-content: center;
+    align-content: center;
+    color: #0A0908;
+    font-size: 20px;
+  }
+  .articleList {
+    display: flex;
+    margin: 4% 0%;
+    width: 72%;
+  }
+  .article {
+    display: flex;
+    margin: 1% 1%;
+  }
+  .articleImg {
+    width: 45%;
+    height: 100%;
+  }
+  .articleInfo {
+    display: flex;
+    background: #A9CEF4;
+    width: 55%;
+    padding: 0% 2%;
+  }
+  .articleTitle {
+    color: #22333B;
+    padding: 0% 0% 10%;
+    margin: 3% 0% 2%;
+    height: 1%;
+    font-size: 20px;
+  }
+  .articleHeadline {
+    display: flex;
+    color: #22333B;
+    font-size: 15px;
+  }
+  .link {
+    display: flex;
+    flex-direction: row;
+  }
+  .articleBody {
+    display: flex;
+    flex-direction: column;
+  }
+  .choosenArticle {
+    display: flex;
+    flex-direction: column;
+  }
+  .choosenTitle {
+    display: flex;
+    font-size: 45px;
+  }
+  .choosenImg {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .choosenBody {
+    display: flex;
+    font-size: 31px;
+  }
+  .topicInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .topicTitle {
+    display: flex;
+    font-size: 38px;
+  }
+  .topicSelector {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 96%;
+    background-color: black;
+    height: 1px;
+    margin: 0px 0px 0px 0px;
+  }
+  .topicBody {
+    display: flex;
+    font-size: 30px;
+  }
 }
-.choosenArticle {
-  display: flex;
-  flex-direction: column;
-}
-.choosenTitle {
-  display: flex;
-}
-.choosenImg {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-.choosenBody {
-  display: flex;
+@media screen and (min-width: 1240px) {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 10px 15px 10px 10px;
+    background: #1e1e24;
+  }
+  li.navTitle {
+    float: left;
+    color: #FCAA67;
+    font-size: 55px;
+  }
+  li.links {
+    float: right;
+    color: #97ABB1;
+    font-size: 55px;
+  }
+  .feedName {
+    color: Black;
+    margin: 0% 0% 0% 40%;
+    padding: 0% 0% 0% 0%;
+    font-size: 15px;
+  }
+  hr {
+    color: Black;
+    height: 3px;
+    background: #732c2c;
+  }
+  .about {
+    display: flex;
+  }
+  .aboutTitle {
+    font-size: 20px;
+    margin: 2% 0% 0% 0%;
+    display: flex;
+    justify-content: center;
+    color: #22333B;
+    font-style: bold;
+  }
+  .aboutMe {
+    display: flex;
+  }
+  .articleList {
+    display: flex;
+    margin: 4% 0%;
+  }
+  .article {
+    display: flex;
+    margin: 1% 1%;
+  }
+  .articleImg {
+    width: 45%;
+    height: 100%;
+  }
+  .articleInfo {
+    display: flex;
+    background: #A9CEF4;
+    width: 55%;
+    padding: 0% 2%;
+  }
+  .articleTitle {
+    color: #22333B;
+    padding: 0% 0% 10%;
+    margin: 3% 0% 2%;
+    height: 1%;
+    font-size: 30px;
+  }
+  .articleHeadline {
+    display: flex;
+    color: #22333B;
+    font-size: 30px;
+  }
+  .link {
+    display: flex;
+    flex-direction: row;
+  }
+  .articleBody {
+    display: flex;
+    flex-direction: column;
+  }
+  .choosenArticle {
+    display: flex;
+    flex-direction: column;
+  }
+  .choosenTitle {
+    display: flex;
+    font-size: 45px;
+  }
+  .choosenImg {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+  }
+  .choosenBody {
+    display: flex;
+    font-size: 31px;
+  }
+  .infoBody {
+    display: flex;
+    flex-direction: column;
+  }
+  .topicInfo {
+    display: flex;
+  }
+  .topicTitle {
+    display: flex;
+    font-size: 38px;
+  }
+  .topicSelector {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 96%;
+    background-color: black;
+    height: 1px;
+    margin: 0px 0px 0px 0px;
+  }
+  .topicBody {
+    display: flex;
+    font-size: 30px;
+  }
 }
