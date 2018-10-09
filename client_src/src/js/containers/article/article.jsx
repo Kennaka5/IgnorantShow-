@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Navbar from '../navbar/navbar';
 import { 
     displayChoosenArticle,
     displayChoosenArticleTopics,
@@ -23,14 +23,9 @@ componentWillMount() {
       console.log('this.props delivered', choosenArticle)
     return (
       <div className='articleBody'>
-        <ul>
-            <Link to='/'>
-            <li className='navTitle'>Ignorant News</li>
-            </Link>
-            <li className='links'>button links</li>
-        </ul>
+            <Navbar />
               <div className='choosenArticle'>
-                <h2 className='choosenTitle'>{!!choosenArticle && choosenArticle.title}</h2>
+                <p className='choosenTitle'>{!!choosenArticle && choosenArticle.title}</p>
                   <img className='choosenImg'
                     src={!!choosenArticle && choosenArticle.media} alt="whatever"
                   /> 
@@ -41,7 +36,7 @@ componentWillMount() {
                   {!!choosenTopics ? choosenTopics.map(s =>{
             return (
                   <div className='topicInfo'>
-                    <h2 className='topicTitle'>{s.title}</h2>
+                    <p className='topicTitle'>{s.title}</p>
                     <hr className='topicSelector'/>
                     <p className='topicBody'>{s.body}</p>
                   </div>);

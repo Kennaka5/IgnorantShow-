@@ -6,7 +6,7 @@ import {
 
 import Home from './containers/home';
 import Article from './containers/article';
-import '../css/style.less';
+import '../sass/main.scss';
 
 
 export default class App extends Component {
